@@ -34,7 +34,7 @@ An end-to-end BI solution for a multinational jewelry retail dataset. [View dash
 - Built an ETL pipeline to clean, transform and load raw retail data into the dimensional model
 - Delivered an interactive Power BI dashboard tracking global revenue, product performance and seasonal trends
 
-**Telco Customer Churn Analysis**
+**[Telco Customer Churn Analysis](https://github.com/Qiuxia-Fu/Telco-Customer-Churn-Analysis)**
 `Python` · `SQL` · `Pandas`
 
 An end-to-end churn analysis on a telecom customer dataset.
