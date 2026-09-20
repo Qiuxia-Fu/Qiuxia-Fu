@@ -12,6 +12,8 @@ I spent 3+ years managing the delivery side of AI/data pipelines (annotation, mo
 - 📊 Comfortable bridging delivery/process thinking with hands-on engineering — from requirements to production-ready pipelines
 - 📫 Reach me via GitHub or [LinkedIn](https://www.linkedin.com/in/qiuxia-fu-109736324/)
 
+---
+
 ### ⭐ Featured Projects
 
 **[YouTube Data ELT Pipeline](https://github.com/Qiuxia-Fu/YouTube-ELT)**
@@ -26,7 +28,7 @@ An end-to-end ELT pipeline extracting YouTube video metadata and turning it into
 **Business Intelligence Dashboard Project**
 `Power BI` · `DAX` · `SQL` · `Excel`
 
-An end-to-end BI solution for a multinational jewelry retail dataset. https://app.powerbi.com/view?r=eyJrIjoiMzg3NmJhZjQtMWVlNC00Yjc3LWI4NjEtMjYxYWFmYWFiOGQyIiwidCI6IjAzMTUxMzIxLWYwMDEtNDIxOC1hM2I5LTRkODM1MzgxNzRjYiJ9
+An end-to-end BI solution for a multinational jewelry retail dataset. [View dashboard](https://app.powerbi.com/view?r=eyJrIjoiMzg3NmJhZjQtMWVlNC00Yjc3LWI4NjEtMjYxYWFmYWFiOGQyIiwidCI6IjAzMTUxMzIxLWYwMDEtNDIxOC1hM2I5LTRkODM1MzgxNzRjYiJ9)
 
 - Designed a star schema data model with conformed dimensions across multiple fact tables
 - Built an ETL pipeline to clean, transform and load raw retail data into the dimensional model
@@ -41,6 +43,8 @@ An end-to-end churn analysis on a telecom customer dataset.
 - Built a tenure-based segmentation showing new customers churn at nearly 7x the rate of long-tenure customers
 - Used SQL (window functions, CASE WHEN) to validate findings and surface the top 3 highest-risk segments
 
+---
+
 ### 🧰 Tech Stack
 
 **Data Engineering**
@@ -51,6 +55,8 @@ pandas, Power BI (DAX), Excel
 
 **Tools**
 Git, VS Code
+
+---
 
 ### 🔭 What I'm Working Toward
 
