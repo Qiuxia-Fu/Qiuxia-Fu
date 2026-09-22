@@ -25,6 +25,15 @@ An end-to-end ELT pipeline extracting YouTube video metadata and turning it into
 - Orchestrated the pipeline with 3 Apache Airflow DAGs on a daily schedule, running fully containerized via Docker Compose (Postgres, Redis, Airflow webserver/scheduler/worker)
 - Implemented automated data quality checks with SODA and unit/integration tests with pytest, wired into a GitHub Actions CI/CD pipeline that builds/pushes the Docker image and runs the test suite on every push
 
+**[Olist E-Commerce Order Data Warehous](https://github.com/Qiuxia-Fu/Olist-E-Commerce-Order-Data-Warehouse)** | `Python` · `PostgreSQL` · `dbt` · `Docker` · `Git`)
+
+A Kimball-style dimensional data warehouse built on a 99K-order Brazilian e-commerce dataset, with SCD Type 2 tracking on the customer dimension.
+
+- Designed a star schema (10 dbt models across staging → snapshot → marts layers) from a 99K-order, 96K-customer dataset, defining business process, grain, and conformed dimensions via an enterprise bus matrix
+- Implemented SCD Type 2 on the customer dimension using dbt snapshots, resolving a non-unique natural key issue via window-function deduplication; validated with a before/after historical comparison
+- Enforced data integrity with 7 dbt tests (not_null, unique, relationships) across staging and mart models, all passing; auto-generated model documentation and lineage graph via dbt docs
+- Containerized the full stack (PostgreSQL) with Docker Compose for one-command reproducibility
+
 **Business Intelligence Dashboard Project**
 `Power BI` · `DAX` · `SQL` · `Excel`
 
@@ -48,7 +57,7 @@ An end-to-end churn analysis on a telecom customer dataset.
 ### 🧰 Tech Stack
 
 **Data Engineering**
-Python, SQL (PostgreSQL), Apache Airflow, Docker & Docker Compose, SODA, pytest, GitHub Actions (CI/CD)
+Python, SQL (PostgreSQL), dbt, Apache Airflow, Docker, SODA, pytest, GitHub Actions (CI/CD)
 
 **Data & BI**
 pandas, Power BI (DAX), Excel
