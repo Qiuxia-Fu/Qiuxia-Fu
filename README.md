@@ -25,7 +25,7 @@ An end-to-end ELT pipeline extracting YouTube video metadata and turning it into
 - Orchestrated the pipeline with 3 Apache Airflow DAGs on a daily schedule, running fully containerized via Docker Compose (Postgres, Redis, Airflow webserver/scheduler/worker)
 - Implemented automated data quality checks with SODA and unit/integration tests with pytest, wired into a GitHub Actions CI/CD pipeline that builds/pushes the Docker image and runs the test suite on every push
 
-**[Olist E-Commerce Order Data Warehous](https://github.com/Qiuxia-Fu/Olist-E-Commerce-Order-Data-Warehouse)** | `Python` · `PostgreSQL` · `dbt` · `Docker` · `Git`)
+**[Olist E-Commerce Order Data Warehous](https://github.com/Qiuxia-Fu/Olist-E-Commerce-Order-Data-Warehouse)** | `Python` · `PostgreSQL` · `dbt` · `Docker` · `Git`
 
 A Kimball-style dimensional data warehouse built on a 99K-order Brazilian e-commerce dataset, with SCD Type 2 tracking on the customer dimension.
 
