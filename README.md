@@ -34,6 +34,13 @@ A Kimball-style dimensional data warehouse built on a 99K-order Brazilian e-comm
 - Enforced data integrity with 7 dbt tests (not_null, unique, relationships) across staging and mart models, all passing; auto-generated model documentation and lineage graph via dbt docs
 - Containerized the full stack (PostgreSQL) with Docker Compose for one-command reproducibility
 
+**[Airflow-Orchestrated Incremental ETL Pipeline](https://github.com/Qiuxia-Fu/Olist-Airflow-Daily-ETL)** | `Python` · `Apache Airflow` · `dbt` · `PostgreSQL` · `Docker` · `GitHub Actions`
+
+- Built a daily incremental ETL pipeline orchestrated with Apache Airflow, using watermark-based extraction and idempotent PostgreSQL writes (upsert with conflict handling) to ensure safe retries and crash recovery without duplicate data
+- Containerized the full stack (Airflow, PostgreSQL, dbt) with Docker Compose for reproducible local and CI environments
+- Implemented CI/CD with GitHub Actions: automated unit tests and dbt data-quality tests (uniqueness, not-null) triggered on every pull request against an ephemeral PostgreSQL service container
+- Extended an existing dbt data warehouse with new staging models, applying a hybrid ETL/ELT design (lightweight validation pre-load, transformation in-warehouse)
+
 **Business Intelligence Dashboard Project**
 `Power BI` · `DAX` · `SQL` · `Excel`
 
