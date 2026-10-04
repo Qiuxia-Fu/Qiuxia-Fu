@@ -16,60 +16,45 @@ I spent 3+ years managing the delivery side of AI/data pipelines (annotation, mo
 
 ### ⭐ Featured Projects
 
+**[NYC Taxi PySpark Batch Pipeline](https://github.com/Qiuxia-Fu/NYC_Taxi_PySpark_Batch)**
+`PySpark` `Python` `Parquet`
+
+Bronze/Silver/Gold batch pipeline processing 22.5M+ NYC taxi trip records with broadcast joins,
+data-quality gating, and Hive-partitioned Parquet output — benchmarked against a memory-aware
+pandas baseline and diagnosed a counter-intuitive result (pandas outperformed local-mode Spark)
+down to its root causes.
+
+**[Olist E-Commerce Order Data Warehouse](https://github.com/Qiuxia-Fu/Olist-E-Commerce-Order-Data-Warehouse)**
+`dbt` `PostgreSQL` `SQL` `Docker`
+
+Kimball star schema (10 dbt models, staging → snapshot → marts) for a 99K-order e-commerce
+dataset, with SCD Type 2 on the customer dimension and 7 dbt tests enforcing data integrity.
+Later extended with an Airflow-orchestrated incremental loading layer
+([see upgrade](https://github.com/Qiuxia-Fu/Airflow-Orchestrated-Incremental-ETL-Pipeline)).
+
 **[YouTube Data ELT Pipeline](https://github.com/Qiuxia-Fu/YouTube-ELT)**
-`Python` · `PostgreSQL` · `Apache Airflow` · `Docker` · `SODA` · `pytest` · `GitHub Actions`
+`Python` `Apache Airflow` `Docker` `GitHub Actions` `pytest`
 
-An end-to-end ELT pipeline extracting YouTube video metadata and turning it into query-ready, quality-checked data.
+End-to-end ELT pipeline orchestrated by 3 daily Airflow DAGs, fully containerized via Docker
+Compose, with automated data-quality checks (SODA) and a CI/CD pipeline running the full test
+suite on every push.
 
-- Built an ELT pipeline extracting video-level metadata (views, likes, comments, duration, upload date) via the YouTube Data API, loading raw data into a PostgreSQL staging schema and transforming it into a core schema
-- Orchestrated the pipeline with 3 Apache Airflow DAGs on a daily schedule, running fully containerized via Docker Compose (Postgres, Redis, Airflow webserver/scheduler/worker)
-- Implemented automated data quality checks with SODA and unit/integration tests with pytest, wired into a GitHub Actions CI/CD pipeline that builds/pushes the Docker image and runs the test suite on every push
+### 📂 Other Projects
 
-**[Olist E-Commerce Order Data Warehous](https://github.com/Qiuxia-Fu/Olist-E-Commerce-Order-Data-Warehouse)** | `Python` · `PostgreSQL` · `dbt` · `Docker` · `Git`
-
-A Kimball-style dimensional data warehouse built on a 99K-order Brazilian e-commerce dataset, with SCD Type 2 tracking on the customer dimension.
-
-- Designed a star schema (10 dbt models across staging → snapshot → marts layers) from a 99K-order, 96K-customer dataset, defining business process, grain, and conformed dimensions via an enterprise bus matrix
-- Implemented SCD Type 2 on the customer dimension using dbt snapshots, resolving a non-unique natural key issue via window-function deduplication; validated with a before/after historical comparison
-- Enforced data integrity with 7 dbt tests (not_null, unique, relationships) across staging and mart models, all passing; auto-generated model documentation and lineage graph via dbt docs
-- Containerized the full stack (PostgreSQL) with Docker Compose for one-command reproducibility
-
-**[Airflow-Orchestrated Incremental ETL Pipeline](https://github.com/Qiuxia-Fu/Olist-Airflow-Daily-ETL)** | `Python` · `Apache Airflow` · `dbt` · `PostgreSQL` · `Docker` · `GitHub Actions`
-
-- Built a daily incremental ETL pipeline orchestrated with Apache Airflow, using watermark-based extraction and idempotent PostgreSQL writes (upsert with conflict handling) to ensure safe retries and crash recovery without duplicate data
-- Containerized the full stack (Airflow, PostgreSQL, dbt) with Docker Compose for reproducible local and CI environments
-- Implemented CI/CD with GitHub Actions: automated unit tests and dbt data-quality tests (uniqueness, not-null) triggered on every pull request against an ephemeral PostgreSQL service container
-- Extended an existing dbt data warehouse with new staging models, applying a hybrid ETL/ELT design (lightweight validation pre-load, transformation in-warehouse)
-
-**Business Intelligence Dashboard Project**
-`Power BI` · `DAX` · `SQL` · `Excel`
-
-An end-to-end BI solution for a multinational jewelry retail dataset. [View dashboard](https://app.powerbi.com/view?r=eyJrIjoiMzg3NmJhZjQtMWVlNC00Yjc3LWI4NjEtMjYxYWFmYWFiOGQyIiwidCI6IjAzMTUxMzIxLWYwMDEtNDIxOC1hM2I5LTRkODM1MzgxNzRjYiJ9)
-
-- Designed a star schema data model with conformed dimensions across multiple fact tables
-- Built an ETL pipeline to clean, transform and load raw retail data into the dimensional model
-- Delivered an interactive Power BI dashboard tracking global revenue, product performance and seasonal trends
-
-**[Telco Customer Churn Analysis](https://github.com/Qiuxia-Fu/Telco-Customer-Churn-Analysis)**
-`Python` · `SQL` · `Pandas`
-
-An end-to-end churn analysis on a telecom customer dataset.
-
-- Analyzed a 7,000-customer dataset to identify key churn drivers (27% overall churn rate)
-- Built a tenure-based segmentation showing new customers churn at nearly 7x the rate of long-tenure customers
-- Used SQL (window functions, CASE WHEN) to validate findings and surface the top 3 highest-risk segments
+More projects — including an incremental-loading upgrade to the Olist warehouse and an earlier
+churn/EDA analysis — are in [my repositories →](https://github.com/Qiuxia-Fu?tab=repositories)
 
 ---
 
 ### 🧰 Tech Stack
 
-**Data Engineering**
+**Data Engineering:**
 Python, SQL (PostgreSQL), dbt, Apache Airflow, Docker, SODA, pytest, GitHub Actions (CI/CD)
 
-**Data & BI**
+**Data & BI:**
 pandas, Power BI (DAX), Excel
 
-**Tools**
+**Tools:**
 Git, VS Code
 
 ---
